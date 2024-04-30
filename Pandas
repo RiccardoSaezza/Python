@@ -1,0 +1,70 @@
+Studio Pandas
+
+Pandas è una libreria utilizzatissima per la creazione di DataFrame. Un DataFrame è una tabella che contiene array con
+dei valori specifici, ogni valore corrisponde ad una colonna.
+EX:
+import pandas as pd
+pd.DataFrame({'Yes':[50,30,40], 'No':[131,23,4]})  -->In questo esempio si creeranno due colonne: Yes e No, e in ogni
+                                                      riga ci saranno i valori dentro le quadre
+Per aggiungere il nome delle righe dentro l'array bisogna scrivere (fuori dal dizionario di prima) :
+EX:
+index=['Product A','Product B']
+
+Le Series permettono di creare sequenze di dati scrivendo dentro l'array in numeri da mettere in sequenza, o utilizzando
+la funzione range()
+EX:
+pd.series([1,2,3,4,5])
+
+con la funzione head(), vediamo il DataFrame creato
+
+Per visualizzare una specifica colonna di un DataFrame utilizziamo:
+pd.set_option('nome_colonna')
+
+oppure
+
+nome_dataframe.['nome_colonna']
+
+Invece per accedere alle righe utilizziamo due funzioni, Loc() e iloc(), la differenza è che con loc() accediamo ad un
+elemento tramite la chiave e il valore, con iloc() invece accediamo tramite il valore numerico dell'indice:
+
+nome_dataframe.iloc[0] --> restituisce tutta la riga 0
+
+nome_dataframe.iloc[:3,0] --> stampa le righe 0,1,2
+
+nome_dataframe.iloc[-5] --> parte a contare dalla fine
+
+Per verificare se un elemento è dentro un DataFrame usiamo isin() :
+EX:
+nome_dataframe.loc(nome_dataframe.nome_colonna.isin([parametro1,parametro2]))
+
+Per vedere se la riga è vuota utilizziamo isnull(), per vedere se non è vuota notnull()
+
+Per assegnare valori ad una colonna usiamo:
+EX:
+nome_dataframe['nome_colonna']='parola'
+
+
+FUNZIONI DI SINTESI:
+
+describe() --> genera un riepilogo degli attributi di una data tabella
+
+mena() --> restituisce la media
+
+unique() --> restituisce una lista dei valori unici
+
+.value_counts() --> restituisce una lista di valori unici e la loro frequenza
+
+
+
+groupby() --> crea un sottogruppo rispetto al dataframe iniziale
+
+apply() --> serve per accedere al gruppo creato precedentemente
+
+agg() --> permette di fare più funzioni contemporaneamente, per esempio agg([min,max,len])
+
+sort_values() --> ordina i valori in base ad un parametro modificabile
+
+sort_index() --> ordina i valori in base all'indice numerico
+
+
+!!!MANCA IL MAP(), NON L'HO CAPITO!!!
