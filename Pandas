@@ -68,3 +68,27 @@ sort_index() --> ordina i valori in base all'indice numerico
 
 
 !!!MANCA IL MAP(), NON L'HO CAPITO!!!
+
+La funzione map() è una funzione built-in che permette di applicare una data funzione ad ogni elemento di un iterable (come una lista, una tupla, ecc.) e restituire un nuovo iterable con i risultati.
+
+Sintassi ==> map(funzione, iterable)
+
+leggenda :
+- 'funzione' è la funzione che si desidera applicare ad ogni elemento dell'iterable.
+- 'iterable' è l'iterable su cui si desidera applicare la funzione.
+
+esempio: 
+def quadrato(x):
+    return x ** 2
+
+numeri = [1, 2, 3, 4, 5]
+
+# Applicare la funzione quadrato a ogni elemento della lista numeri utilizzando map()
+risultati = map(quadrato, numeri)
+
+(risultati E' UNA VARIABILE CHE HA VALORE ITERABLE. TRASFORMA IN UNA LISTA O TUPLA)
+
+# Convertire l'oggetto map in una lista per visualizzare i risultati
+risultati_lista = list(risultati)
+
+print(risultati_lista)  # Output: [1, 4, 9, 16, 25]
