@@ -67,8 +67,6 @@ sort_values() --> ordina i valori in base ad un parametro modificabile
 sort_index() --> ordina i valori in base all'indice numerico
 
 
-!!!MANCA IL MAP(), NON L'HO CAPITO!!!
-
 La funzione map() è una funzione built-in che permette di applicare una data funzione ad ogni elemento di un iterable (come una lista, una tupla, ecc.) e restituire un nuovo iterable con i risultati.
 
 Sintassi ==> map(funzione, iterable)
@@ -92,3 +90,24 @@ risultati = map(quadrato, numeri)
 risultati_lista = list(risultati)
 
 print(risultati_lista)  # Output: [1, 4, 9, 16, 25]
+
+Quando in una colonna ci sono delle stringhe, se chiediamo il dtype, non viene scritto 'str' ma 'object'. Per convertire
+il tipo di una colonna ad un altro si usa astype()
+
+Quando non abbiamo valori in una cella viene scritto NaN (not a number), per sostituire tutti i NaN con una parola
+specifica si usa fillna('parola')
+
+Per sostituire un dato che gia c'è utilizziamo replace(), torna utile se cambiano tutti i NaN con 'parola', poi possiamo
+sostituire velocemente quelle celle
+
+Con la funzione rename() possiamo rinominare una colonna o le righe, di solito è più usate per le colonne perchè le righe
+vengono modificate raramente, infatti si usa set_index()
+
+Sia le colonne sia le righe possono avere un indice con un nome proprio, questo è modificabile con rename_axis()
+
+Quando si lavora con i dataframe può capitare di dover unire varie informazioni tra essi, ci sono tre funzioni in ordine
+di complessità: concat(), join(), merge(). (Merge viene tralasciato perchè fa le stesse cose di join() ma in modo più
+complesso)
+concat() --> dato un elenco di elementi li unisce su un asse, è utile quando i dataframe hanno lo stesso numero di colonne
+
+join() --> unisce gli elementi di vari dataframe che hanno una riga in comune
