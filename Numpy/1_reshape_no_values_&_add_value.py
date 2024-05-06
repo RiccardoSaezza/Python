@@ -1,6 +1,6 @@
 import numpy as np
 
-array = np.empty((2, 3))
+array = np.zeros((2, 3))
 
 print("primo array: ")
 print(array)
